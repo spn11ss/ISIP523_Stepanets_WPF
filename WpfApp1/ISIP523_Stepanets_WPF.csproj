@@ -67,6 +67,9 @@
     <Compile Include="Step4_Credit.xaml.cs">
       <DependentUpon>Step4_Credit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Step5_Order.xaml.cs">
+      <DependentUpon>Step5_Order.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,6 +96,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Step4_Credit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Step5_Order.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
