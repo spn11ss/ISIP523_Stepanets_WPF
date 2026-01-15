@@ -67,18 +67,18 @@ namespace WpfApp1
                     MessageBox.Show("Выберите модель и тип двигателя!");
                     return;
                 }
-                MainFrame.Navigate(new Step2_ColorAndOptions());
+                MainFrame.Navigate(new Step2_Specifications());
             }
-            else if (currentPage is Step2_ColorAndOptions)
+            else if (currentPage is Step2_Specifications)
             {
                 if (string.IsNullOrEmpty(Config.Current.Color))
                 {
                     MessageBox.Show("Выберите цвет автомобиля!");
                     return;
                 }
-                MainFrame.Navigate(new Step3_Summary());
+                MainFrame.Navigate(new Step3_Summa());
             }
-            else if (currentPage is Step3_Summary)
+            else if (currentPage is Step3_Summa)
             {
                 MainFrame.Navigate(new Step4_Credit());
             }
@@ -102,12 +102,12 @@ namespace WpfApp1
 
             if (e.Content is Step1_Model)
                 ProgressBar.Value = 1;
-            else if (e.Content is Step2_ColorAndOptions)
+            else if (e.Content is Step2_Specifications)
                 ProgressBar.Value = 2;
-            else if (e.Content is Step3_Summary)
+            else if (e.Content is Step3_Summa)
             {
                 ProgressBar.Value = 3;
-                var summaryPage = e.Content as Step3_Summary;
+                var summaryPage = e.Content as Step3_Summa;
                 summaryPage?.UpdateSummary();
             }
             else if (e.Content is Step4_Credit)
