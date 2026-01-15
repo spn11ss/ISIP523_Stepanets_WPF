@@ -64,6 +64,9 @@
     <Compile Include="Step3_Summa.xaml.cs">
       <DependentUpon>Step3_Summa.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Step4_Credit.xaml.cs">
+      <DependentUpon>Step4_Credit.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,6 +89,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Step3_Summa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Step4_Credit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
