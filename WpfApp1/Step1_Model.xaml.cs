@@ -47,7 +47,7 @@ namespace WpfApp1
             switch (Config.Current.Engine)
             {
                 case "Бензиновый": Config.Current.EnginePrice = 0; break;
-                case "Дизельный": Config.Current.EnginePrice = 1500; break;
+                case "Дизельный": Config.Current.EnginePrice = 2000; break;
                 case "Электрический": Config.Current.EnginePrice = 5000; break;
             }
         }

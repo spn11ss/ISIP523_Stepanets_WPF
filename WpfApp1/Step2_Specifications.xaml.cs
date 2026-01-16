@@ -92,8 +92,6 @@ namespace WpfApp1
                 {
                     case "Кожаный салон": price += 2000; break;
                     case "Панорамная крыша": price += 1500; break;
-                    case "Круиз-контроль": price += 800; break;
-                    case "Парктроники": price += 600; break;
                     case "Подогрев сидений": price += 400; break;
                 }
             }

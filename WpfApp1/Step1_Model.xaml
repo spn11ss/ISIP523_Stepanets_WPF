@@ -13,14 +13,17 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Шаг 1: Выбор модели и двигателя" 
-                   FontSize="18" FontWeight="Bold" Margin="0,0,0,20"/>
+        <Border Grid.Row="0" Background="#DB4D92" CornerRadius="5" Padding="15" Margin="0,0,0,20">
+            <TextBlock Grid.Row="0" Text="Шаг 1: Выбор модели и двигателя" 
+                   FontSize="18" FontWeight="Bold" 
+                   HorizontalAlignment="Center"/>
+        </Border>
 
         <StackPanel Grid.Row="1" Margin="10">
             <TextBlock Text="Модель автомобиля:" FontSize="14" Margin="0,5"/>
             <ComboBox x:Name="ModelComboBox" SelectionChanged="ModelComboBox_SelectionChanged">
                 <ComboBoxItem Content="Седан (базовая цена: 20 000€)" Tag="20000"/>
-                <ComboBoxItem Content="Хэтчбек (базовая цена: 22 000€)" Tag="22000"/>
+                <ComboBoxItem Content="Джип (базовая цена: 22 000€)" Tag="22000"/>
                 <ComboBoxItem Content="Внедорожник (базовая цена: 30 000€)" Tag="30000"/>
             </ComboBox>
 
@@ -28,7 +31,7 @@
             <StackPanel>
                 <RadioButton x:Name="PetrolEngine" Content="Бензиновый (+0€)" 
                             Checked="Engine_Checked" GroupName="Engine"/>
-                <RadioButton x:Name="DieselEngine" Content="Дизельный (+1 500€)" 
+                <RadioButton x:Name="DieselEngine" Content="Дизельный (+2 000€)" 
                             Checked="Engine_Checked" GroupName="Engine"/>
                 <RadioButton x:Name="ElectricEngine" Content="Электрический (+5 000€)" 
                             Checked="Engine_Checked" GroupName="Engine"/>
