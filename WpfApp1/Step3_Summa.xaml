@@ -22,7 +22,7 @@
             <TextBlock Text="Выбранная конфигурация:" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
 
             <StackPanel Margin="0,0,0,20">
-                <!-- ПРОСТЫЕ TextBlock БЕЗ Binding -->
+
                 <TextBlock x:Name="ModelText"/>
                 <TextBlock x:Name="EngineText"/>
                 <TextBlock x:Name="ColorText"/>
@@ -32,7 +32,6 @@
             <TextBlock Text="Составляющие стоимости:" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
 
             <StackPanel>
-                <!-- ПРОСТЫЕ TextBlock БЕЗ Binding -->
                 <TextBlock x:Name="BasePriceText"/>
                 <TextBlock x:Name="EnginePriceText"/>
                 <TextBlock x:Name="ColorPriceText"/>
