@@ -28,7 +28,35 @@ namespace WpfApp1
 
         private void BProduct_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Navigate(new Page1_Product());
         }
+
+        private void BKorzina_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Page2_Korzina());
+        }
+
+        private void BOrder_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Page3_Order());
+        }
+
+        private void MainFrame_OnNavigated( object sender, NavigationEventArgs e)
+        {
+            if (e.Content is Page1_Product)
+            {
+                Title = "Парфюмерный магазин - Каталог товаров";
+            }
+            else if (e.Content is Page2_Korzina)
+            {
+                Title = "Парфюмерный магазин - Корзина";
+            }
+            else if (e.Content is Page3_Order)
+            {
+                Title = "Парфюмерный магазин - Оформление заказа";
+            }
+        }
+
+
     }
 }
