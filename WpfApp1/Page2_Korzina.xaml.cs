@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Page2_Korzina.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Page2_Korzina : Page
     {
-        public MainWindow()
+        public Page2_Korzina()
         {
             InitializeComponent();
-            MainFrame.Navigate(new Page1_Product());
-        }
-
-        private void BProduct_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

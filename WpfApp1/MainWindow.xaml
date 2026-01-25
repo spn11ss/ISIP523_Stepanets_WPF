@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Парфюмерный магазин" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="LightBlue" Height="50">
+            <Button x:Name="BProduct" Content="Продукция" Width="100" Height="30" 
+                    FontFamily="Dubai" FontWeight="Bold" Foreground="#000080" 
+                    FontSize="14" Margin="10,0,0,0" Click="BProduct_Click"/>
+        </StackPanel>
+
+        <Frame Grid.Row="2" x:Name="MainFrame" NavigationUIVisibility="Hidden" 
+         Navigated="MainFrame_OnNavigated" Margin="10"/>
     </Grid>
 </Window>

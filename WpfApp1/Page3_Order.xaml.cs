@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Page3_Order.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Page3_Order : Page
     {
-        public MainWindow()
+        public Page3_Order()
         {
             InitializeComponent();
-            MainFrame.Navigate(new Page1_Product());
-        }
-
-        private void BProduct_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
