@@ -20,9 +20,33 @@ namespace WpfApp1
     /// </summary>
     public partial class Page1_Product : Page
     {
-        public Page1_Product()
+        private static List<Product> products = new List<Product>();
+        List<Product> prod = Core.Context.Product.ToList();
+
+
+
+        public Page1_Product(List<Product> products)
         {
             InitializeComponent();
+            products = prod;
+            LoudPage();
+
         }
+        private void LoudPage()
+        {
+            Page1LstBx.ItemsSource = prod;
+        }
+        private void Vkorzinu_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            Product selproduct = btn.DataContext as Product;
+            if (selproduct == null) return;
+        }
+
+        //private void GoToCart_Click(object sender, RoutedEventArgs e)
+        //{
+        //    // Передаем корзину на страницу корзины
+        //    NavigationService.Navigate(new PageCart(CartProducts));
+        //}
     }
 }

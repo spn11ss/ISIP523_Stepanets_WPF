@@ -19,5 +19,24 @@
                        FontSize="20" FontFamily="Dubai" FontWeight="Bold" 
                        Foreground="#000080" HorizontalAlignment="Center"/>
         </Border>
+
+        <ListBox Grid.Row="1" x:Name="Page1LstBx" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="#e0ffff">
+            <ListBox.ItemTemplate>
+                <ItemContainerTemplate>
+                    <StackPanel Height="350" Width="250">
+                        <Image   Height="200" Width="200"  Margin="0,0,10,0"  Source="{Binding Picture}"/>
+                        <TextBlock FontSize="16" FontFamily="Dubai" FontWeight="Bold" 
+                                   Foreground="#000080" Text="{Binding Name}"/>
+                        <TextBlock Margin="0,5,0,10" FontSize="14" FontFamily="Dubai" Foreground="Green" Text="{Binding Price, StringFormat='Цена: {0} руб.'}"/>
+                        <Button    Margin="5"  Content="В корзину" Click="Vkorzinu_Click"/>
+                    </StackPanel>
+                </ItemContainerTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
     </Grid>
 </Page>

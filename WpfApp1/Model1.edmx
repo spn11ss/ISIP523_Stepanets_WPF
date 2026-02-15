@@ -30,6 +30,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Picture" Type="nvarchar" MaxLength="70" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -112,6 +113,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Picture" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="OrderProduct" Relationship="Self.FK_OrderProduct_Product" FromRole="Product" ToRole="OrderProduct" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -148,7 +150,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="pr13Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="pr13Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Order" EntityType="Self.Order" />
           <EntitySet Name="OrderProduct" EntityType="Self.OrderProduct" />
           <EntitySet Name="Product" EntityType="Self.Product" />
@@ -167,7 +169,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище pr13ModelContainer" CdmEntityContainer="pr13Entities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище pr13ModelContainer" CdmEntityContainer="pr13Entities1">
           <EntitySetMapping Name="Order">
             <EntityTypeMapping TypeName="pr13Model.Order">
               <MappingFragment StoreEntitySet="Order">
@@ -194,6 +196,7 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -22,10 +22,7 @@
                     FontFamily="Dubai" FontWeight="Bold" Foreground="#000080" 
                     Background="#e0ffff" BorderBrush="#000080"
                     FontSize="14" Margin="10,0,0,0" Click="BKorzina_Click"/>
-            <Button x:Name="BOrder" Content="Оформление заказа" Width="150" Height="30" 
-                    FontFamily="Dubai" FontWeight="Bold" Foreground="#000080" 
-                    Background="#e0ffff" BorderBrush="#000080"
-                    FontSize="14" Margin="10,0,0,0" Click="BOrder_Click" />
+
         </StackPanel>
 
         <Frame Grid.Row="1" x:Name="MainFrame" NavigationUIVisibility="Hidden" 
