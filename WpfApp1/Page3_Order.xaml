@@ -6,9 +6,79 @@
       xmlns:local="clr-namespace:WpfApp1"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page3_Order">
+      Title="Page3_Order" >
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="White" Padding="10" Margin="0,0,0,10">
+            <TextBlock Text="Оформление заказа" FontSize="20" FontFamily="Dubai" 
+                       FontWeight="Bold" Foreground="#000080" HorizontalAlignment="Center"/>
+        </Border>
+
+        <Border Grid.Row="1" Padding="15" Background="#e0ffff" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <StackPanel>
+                <TextBlock Text="Состав заказа" FontSize="16" FontWeight="Bold" 
+                            Foreground="#000080" Margin="0,10,0,10"/>
+
+                <ListBox Height="100" x:Name="Page3LstBx" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+                    <ListBox.ItemTemplate>
+                        <ItemContainerTemplate>
+                            <Border BorderBrush="#F0F0F0" BorderThickness="0,0,0,1" Padding="5" Margin="0,0,0,2">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{Binding Name}" FontSize="14"/>
+
+                                    <TextBlock Grid.Column="1" Text="{Binding Price, StringFormat='Цена {0} руб.'}" 
+                               FontSize="14" Foreground="Green"/>
+                                </Grid>
+                            </Border>
+                        </ItemContainerTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                
+                <TextBlock Text="Данные клиента" FontSize="16" FontFamily="Dubai" 
+                           FontWeight="Bold" Margin="0,0,0,10" Foreground="#000080"/>
+                <StackPanel Margin="0,0,0,15">
+                    <TextBlock Text="ФИО: " FontSize="10" FontFamily="Dubai" Margin="0,0,0,5"/>
+                    <TextBox x:Name="FIOtxt" Height="30" Padding="5"/>
+
+                    <TextBlock Text="Email: "  FontSize="10" FontFamily="Dubai" Margin="0,10,0,5"/>
+                    <TextBox x:Name="Emailtxt" Height="30" Padding="5"/>
+
+                    <TextBlock Text="Адрес доставки: " FontSize="10" FontFamily="Dubai" Margin="0,10,0,5"/>
+                    <TextBox x:Name="Adrestxt" Height="30" Padding="5" TextWrapping="Wrap"/>
+                </StackPanel>
+                
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="2" Background="#F0F0F0" Padding="10" Margin="0,10,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button />
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock Text="Итого к оплате: " Foreground="#000080" FontFamily="Dubai" FontSize="16" FontWeight="Bold" 
+                       VerticalAlignment="Center" Margin="0,0,5,0"/>
+
+                    <TextBlock x:Name="Finaly_PriceTxt" Text="0 руб." FontSize="16" FontWeight="Bold" 
+                       FontFamily="Dubai" Foreground="Green" VerticalAlignment="Center" Margin="0,0,20,0"/>
+                </StackPanel>
+                
+                <Button Grid.Column="1" x:Name="OrdrButton"
+                Content="Заказать" Width="120" Height="35" Background="#4CAF50" 
+                Foreground="White" FontFamily="Dubai" FontWeight="Bold" Click="OrderButton_Click"/>
+            </Grid>
+        </Border>
     </Grid>
 </Page>

@@ -22,7 +22,7 @@
         <ListBox Grid.Row="1"  x:Name="Page2LstBx" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="#e0ffff" d:ItemsSource="{d:SampleData ItemCount=5}">
             <ListBox.ItemTemplate>
                 <ItemContainerTemplate>
-                    <Border CornerRadius="5" Margin="0,5,0,5" Padding="10" Background="White">
+                    <Border  HorizontalAlignment="Stretch" CornerRadius="5" Margin="0,5,0,5" Padding="10" Background="White">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
@@ -64,7 +64,7 @@
                     <TextBlock Text="Итого: " Foreground="#000080" FontFamily="Dubai" FontSize="16" FontWeight="Bold" 
                                VerticalAlignment="Center" Margin="0,0,5,0"/>
 
-                    <TextBlock x:Name="Final_PriceTxt" Text="0 ₽" FontSize="16" FontWeight="Bold" 
+                    <TextBlock x:Name="Final_PriceTxt" Text="0 руб." FontSize="16" FontWeight="Bold" 
                                FontFamily="Dubai" Foreground="Green" VerticalAlignment="Center" Margin="0,0,20,0"/>
                 </StackPanel>
                 <Button Grid.Column="1" x:Name="OrderButton"
