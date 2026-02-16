@@ -23,6 +23,42 @@ namespace WpfApp1
         public Page2_Korzina()
         {
             InitializeComponent();
+            LoudPage();
+        }
+
+        private void LoudPage()
+        {
+            Page2LstBx.ItemsSource = MainWindow.products;
+            Final_PriceTxt.Text = $"{Summary()}";
+        }
+        private void ButtonRemove_Click(object sender, RoutedEventArgs e)
+        {
+            Button but = sender as Button;
+            if (but == null) return;
+
+            Product productik = but.DataContext as Product;
+            if(productik != null)
+            {
+                MainWindow.products.Remove(productik);
+                Page2LstBx.ItemsSource = null;
+                Page2LstBx.ItemsSource = MainWindow.products;
+                Summary();
+
+            }
+        }
+        private void OrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            Page3_Order orderpage = new Page3_Order();
+            NavigationService?.Navigate(orderpage);
+        }
+        private decimal Summary()
+        {
+            decimal total = 0;
+            foreach(Product products in MainWindow.products)
+            {
+                total += products.Price;
+            }
+            return total;
         }
     }
 }
