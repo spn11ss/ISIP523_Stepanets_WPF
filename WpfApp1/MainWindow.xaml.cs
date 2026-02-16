@@ -20,16 +20,16 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Product> products = new List<Product>();
+        public static List<Product> products = new List<Product>();
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new Page1_Product(products));
+            MainFrame.Navigate(new Page1_Product());
         }
 
         private void BProduct_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Page1_Product(products));
+            MainFrame.Navigate(new Page1_Product());
         }
 
         private void BKorzina_Click(object sender, RoutedEventArgs e)
