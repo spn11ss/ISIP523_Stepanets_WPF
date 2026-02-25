@@ -21,6 +21,7 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
         public static List<Product> products = new List<Product>();
+
         public MainWindow()
         {
             InitializeComponent();
