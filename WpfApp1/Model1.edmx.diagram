@@ -4,19 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="de5c08da9adf4f9b9e9cf5d65a365314" Name="Diagram1">
-        <EntityTypeShape EntityType="pr14Model.AgeReating" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+      <Diagram DiagramId="04019b9fcf8448cd988028de5f2f8b93" Name="Diagram1">
+        <EntityTypeShape EntityType="pr14Model.AgeRating" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="pr14Model.Chair" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="pr14Model.Cinema" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="pr14Model.CinemaHall" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="pr14Model.CinemaHallChair" Width="1.5" PointX="7.5" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="pr14Model.Client" Width="1.5" PointX="8.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="pr14Model.Client" Width="1.5" PointX="8.25" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="pr14Model.Genres" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="pr14Model.GenresCinema" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="pr14Model.Hall" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="pr14Model.ReatingHall" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="pr14Model.sysdiagrams" Width="1.5" PointX="7.75" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="pr14Model.Ticket" Width="1.5" PointX="10.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="pr14Model.RatingHall" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="pr14Model.sysdiagrams" Width="1.5" PointX="7.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="pr14Model.Ticket" Width="1.5" PointX="10.5" PointY="4.125" IsExpanded="true" />
         <AssociationConnector Association="pr14Model.FK_Cinema_AgeReating" ManuallyRouted="false" />
         <AssociationConnector Association="pr14Model.FK_Chair_Hall" ManuallyRouted="false" />
         <AssociationConnector Association="pr14Model.FK_CinemaHallChair_Chair" ManuallyRouted="false" />

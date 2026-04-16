@@ -12,10 +12,10 @@ namespace WpfApp1
     using System;
     using System.Collections.Generic;
     
-    public partial class AgeReating
+    public partial class AgeRating
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AgeReating()
+        public AgeRating()
         {
             this.Cinema = new HashSet<Cinema>();
         }

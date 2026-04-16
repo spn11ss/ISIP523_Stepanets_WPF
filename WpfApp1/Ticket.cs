@@ -20,6 +20,7 @@ namespace WpfApp1
         public decimal Price { get; set; }
         public int ClientID { get; set; }
         public int CinemaHallID { get; set; }
+        public Nullable<System.DateTime> PurchaseDate { get; set; }
     
         public virtual Chair Chair { get; set; }
         public virtual CinemaHall CinemaHall { get; set; }

@@ -23,12 +23,12 @@ namespace WpfApp1
     
         public int ID { get; set; }
         public string HallNumber { get; set; }
-        public int ReatingHallID { get; set; }
+        public int RatingHallID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Chair> Chair { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CinemaHall> CinemaHall { get; set; }
-        public virtual ReatingHall ReatingHall { get; set; }
+        public virtual RatingHall RatingHall { get; set; }
     }
 }

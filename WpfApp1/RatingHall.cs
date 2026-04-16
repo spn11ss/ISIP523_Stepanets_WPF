@@ -12,16 +12,16 @@ namespace WpfApp1
     using System;
     using System.Collections.Generic;
     
-    public partial class ReatingHall
+    public partial class RatingHall
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ReatingHall()
+        public RatingHall()
         {
             this.Hall = new HashSet<Hall>();
         }
     
         public int ID { get; set; }
-        public string ReatingName { get; set; }
+        public string RatingName { get; set; }
         public decimal ChairPrice { get; set; }
         public string Description { get; set; }
     

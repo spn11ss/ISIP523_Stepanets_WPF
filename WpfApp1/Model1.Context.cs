@@ -13,10 +13,10 @@ namespace WpfApp1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class pr14Entities : DbContext
+    public partial class pr14Entities1 : DbContext
     {
-        public pr14Entities()
-            : base("name=pr14Entities")
+        public pr14Entities1()
+            : base("name=pr14Entities1")
         {
         }
     
@@ -25,7 +25,7 @@ namespace WpfApp1
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AgeReating> AgeReating { get; set; }
+        public virtual DbSet<AgeRating> AgeRating { get; set; }
         public virtual DbSet<Chair> Chair { get; set; }
         public virtual DbSet<Cinema> Cinema { get; set; }
         public virtual DbSet<CinemaHall> CinemaHall { get; set; }
@@ -34,7 +34,7 @@ namespace WpfApp1
         public virtual DbSet<Genres> Genres { get; set; }
         public virtual DbSet<GenresCinema> GenresCinema { get; set; }
         public virtual DbSet<Hall> Hall { get; set; }
-        public virtual DbSet<ReatingHall> ReatingHall { get; set; }
+        public virtual DbSet<RatingHall> RatingHall { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Ticket> Ticket { get; set; }
     }

@@ -17,7 +17,7 @@ namespace WpfApp1
         public int ID { get; set; }
         public int ChairID { get; set; }
         public int CinemaHallID { get; set; }
-        public bool IsTaking { get; set; }
+        public bool IsTaken { get; set; }
     
         public virtual Chair Chair { get; set; }
         public virtual CinemaHall CinemaHall { get; set; }

@@ -23,13 +23,13 @@ namespace WpfApp1
     
         public int ID { get; set; }
         public string Name { get; set; }
-        public int AgeReatingID { get; set; }
+        public int AgeRatingID { get; set; }
         public string Image { get; set; }
-        public int Reating { get; set; }
+        public int Rating { get; set; }
         public System.DateTime DateStart { get; set; }
         public string Description { get; set; }
     
-        public virtual AgeReating AgeReating { get; set; }
+        public virtual AgeRating AgeRating { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CinemaHall> CinemaHall { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
