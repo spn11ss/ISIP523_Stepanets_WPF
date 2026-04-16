@@ -1,0 +1,99 @@
+﻿<Page x:Class="WpfApp1.PartsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Выбор комплектующих" Background="#F0F0F0">
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Левая панель -->
+        <Border Grid.Column="0" BorderBrush="Gray" BorderThickness="1" Padding="5" Margin="0,0,10,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Тип комплектующего" FontWeight="Bold"/>
+                <ListBox Grid.Row="1" x:Name="PartTypesList" Height="100" Margin="0,5,0,10"
+                         DisplayMemberPath="name" SelectedValuePath="id"
+                         SelectionChanged="PartTypesList_SelectionChanged"/>
+
+                <TextBlock Grid.Row="2" Text="Производитель" FontWeight="Bold"/>
+                <ComboBox Grid.Row="2" x:Name="ManufacturerFilter" Margin="0,25,0,10"
+                          DisplayMemberPath="name" SelectedValuePath="id"
+                          SelectionChanged="ManufacturerFilter_SelectionChanged"/>
+
+                <TextBox Grid.Row="3" x:Name="SearchBox" Margin="0,0,0,10" TextChanged="SearchBox_TextChanged"/>
+
+                <ListBox Grid.Row="4" x:Name="PartsList" SelectionChanged="PartsList_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="{Binding name}" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding price, StringFormat=C}" Foreground="Green"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </Border>
+
+        <!-- Центральная панель -->
+        <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1" Padding="5" Margin="0,0,10,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Выбранные комплектующие" FontWeight="Bold"/>
+
+                <ScrollViewer Grid.Row="1">
+                    <ItemsControl x:Name="SelectedPartsList">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="Gray" BorderThickness="0,0,0,1" Padding="5" Margin="0,2">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="80"/>
+                                            <ColumnDefinition Width="60"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="{Binding Part.name}"/>
+                                        <TextBlock Grid.Column="1" Text="{Binding Part.price, StringFormat=C}" Foreground="Green"/>
+                                        <Button Grid.Column="2" Content="Удалить" Click="RemovePart_Click" Tag="{Binding}"/>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+
+                <TextBlock Grid.Row="2" x:Name="CompatibilityStatus" TextWrapping="Wrap" Margin="0,5,0,0"/>
+            </Grid>
+        </Border>
+
+        <!-- Правая панель -->
+        <Border Grid.Column="2" Background="#2C3E50" Padding="10">
+            <StackPanel>
+                <TextBlock Text="Цена сборки" Foreground="White" FontWeight="Bold" TextAlignment="Center"/>
+                <TextBlock x:Name="TotalPrice" FontSize="20" FontWeight="Bold" Foreground="LightGreen" TextAlignment="Center" Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+   
+</Page>

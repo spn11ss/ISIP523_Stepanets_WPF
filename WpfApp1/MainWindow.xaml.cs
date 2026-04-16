@@ -23,6 +23,20 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new PartsPage());
         }
+
+        private void SaveAssembly_Click(object sender, RoutedEventArgs e)
+        {
+            var page = MainFrame.Content as PartsPage;
+            if (page != null)
+                MainFrame.Navigate(new SaveDialog(page));
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e) => Close();
+
+        private void ShowParts_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new PartsPage());
+
+        private void ShowAssemblies_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new AssembliesPage());
     }
 }
