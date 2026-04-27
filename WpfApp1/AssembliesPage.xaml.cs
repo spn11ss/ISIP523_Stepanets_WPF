@@ -23,41 +23,29 @@ namespace WpfApp1
         public AssembliesPage()
         {
             InitializeComponent();
-            Loaded += (s, e) =>
-            {
-                try
-                {
-                    AssembliesList.ItemsSource = Core.Context.assembly.OrderByDescending(a => a.id).ToList();
-                }
-                catch (System.Exception ex)
-                {
-                    MessageBox.Show($"Ошибка: {ex.Message}");
-                }
-            };
-        }
+            Loaded += AssembliesPage_Loaded;
+}
+
+private void AssembliesPage_Loaded(object sender, RoutedEventArgs e)
+{
+    AssembliesList.ItemsSource = Core.Context.assembly.OrderByDescending(a => a.id).ToList();
+}
 
         private void ShowDetails_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                var btn = sender as Button;
-                var assembly = btn?.Tag as assembly;
-                if (assembly == null) return;
+            var btn = sender as Button;
+            var assembly = btn?.Tag as assembly;
+            if (assembly == null) return;
 
-                var parts = Core.Context.partassembly.Where(p => p.assemblyid == assembly.id).Select(p => p.basepart).ToList();
-                decimal total = parts.Sum(p => p.price);
+            var parts = Core.Context.partassembly.Where(p => p.assemblyid == assembly.id).Select(p => p.basepart).ToList();
+            decimal total = parts.Sum(p => p.price);
 
-                string text = $"{assembly.name}\nАвтор: {assembly.author}\n\nКомпоненты:\n";
-                foreach (var p in parts)
-                    text += $"- {p.name}: {p.price:C}\n";
-                text += $"\nИтого: {total:C}";
+            string text = $"{assembly.name}\nАвтор: {assembly.author}\n\nКомпоненты:\n";
+            foreach (var p in parts)
+                text += $"- {p.name}: {p.price:C}\n";
+            text += $"\nИтого: {total:C}";
 
-                MessageBox.Show(text);
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show($"Ошибка: {ex.Message}");
-            }
+            MessageBox.Show(text);
         }
     }
 }

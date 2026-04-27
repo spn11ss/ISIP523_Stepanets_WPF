@@ -19,7 +19,7 @@
         <ListBox Grid.Row="1" x:Name="AssembliesList">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="Gray" BorderThickness="0,0,0,1" Padding="10" Margin="0,2">
+                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,2">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>

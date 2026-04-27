@@ -33,10 +33,18 @@ namespace WpfApp1
                 MainFrame.Navigate(new SaveDialog(page));
         }
 
-        private void Exit_Click(object sender, RoutedEventArgs e) => Close();
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+        private void ShowParts_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new PartsPage());
+        }
 
-        private void ShowParts_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new PartsPage());
-
-        private void ShowAssemblies_Click(object sender, RoutedEventArgs e) => MainFrame.Navigate(new AssembliesPage());
+        private void ShowAssemblies_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new AssembliesPage());
+        }
     }
 }
